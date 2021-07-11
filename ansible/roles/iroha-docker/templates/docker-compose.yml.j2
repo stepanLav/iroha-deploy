@@ -54,6 +54,7 @@ services:
     mem_limit: "{{ iroha_docker_mem_limit }}"
 {% endif %}
     restart: always
+    privileged: true
 {% if iroha_docker_commands is defined %}
     {#- Only JSON notation for commands can work in docker-compose #}
     command: {{ iroha_docker_commands | to_json }}
